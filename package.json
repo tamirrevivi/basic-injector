@@ -1,0 +1,28 @@
+{
+  "name": "injector-js",
+  "version": "1.0.0",
+  "description": "Automatically call function with the appropriate parameters according to the parameters name in function signature.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamirrevivi/injector.js.git"
+  },
+  "keywords": [
+    "inject",
+    "injector",
+    "injection",
+    "js",
+    "node",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Tamir Revivi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tamirrevivi/injector.js/issues"
+  },
+  "homepage": "https://github.com/tamirrevivi/injector.js#readme"
+}
