@@ -1,12 +1,29 @@
 const config = require('./config');
 
 const Injector = function(params){
-  this.inject = function(cb){
+  var getArguments = function(cb){
+    var context = context || this;
     var signature = cb.toString().split('\n')[0];
-    var arguments = config.regex.exec(signature)[1]
+    var parsedSignature = config.regex.exec(signature);
+    if (!parsedSignature){
+      return [];
+    }
+    var arguments = parsedSignature[1]
       .split(",")
       .map(argument => params[argument.trim()]);
-    return cb.apply(this, arguments);
+    return arguments;
+  }
+
+  this.inject = function(cb, context){
+    var arguments = getArguments(cb);
+    return cb.apply(context, arguments);
+  }
+  this.construct = function(ctor){
+    var arguments = [null].concat(getArguments(ctor));
+    return new (Function.prototype.bind.apply(ctor, arguments));
+  }
+  this.set = function(key, value){
+    params[key] = value;
   }
 }
 
