@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tamirrevivi/injector.js.git"
+    "url": "git+https://github.com/tamirrevivi/basic-injector.git"
   },
   "keywords": [
     "inject",
@@ -22,7 +22,7 @@
   "author": "Tamir Revivi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tamirrevivi/injector.js/issues"
+    "url": "https://github.com/tamirrevivi/basic-injector/issues"
   },
-  "homepage": "https://github.com/tamirrevivi/injector.js#readme"
+  "homepage": "https://github.com/tamirrevivi/basic-injector#readme"
 }
