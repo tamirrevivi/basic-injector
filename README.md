@@ -30,6 +30,13 @@ Add more parameters to inject
 injector.set("port", 8080);
 ```
 
+## Removing parameters
+Remove parameters to inject
+
+```js
+injector.remove("port");
+```
+
 ## Set thisArg
 Set the fucntions this
 

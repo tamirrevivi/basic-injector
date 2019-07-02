@@ -25,6 +25,9 @@ const Injector = function(params){
   this.set = function(key, value){
     params[key] = value;
   }
+  this.remove = function(key){
+    delete params[key];
+  }
 }
 
 module.exports = Injector
