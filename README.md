@@ -58,7 +58,7 @@ var Example = function(port){
   this.port = port;
 }
 
-var example = injector.construct(Exapmle);
+var example = injector.construct(Example);
 
 console.log(example) // Example { port: 8080 }
 ```
