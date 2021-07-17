@@ -5,7 +5,7 @@ export class Injector {
   constructor(private params: InjectorParams) {
   }
 
-  private getArguments(cb: Function): any[] {
+  private getArguments(cb: Function, overrides?: InjectorParams): any[] {
     const cbString: string = cb.toString();
     let parsedSignature: RegExpExecArray;
     if (cbString.startsWith('class')) {
@@ -20,7 +20,12 @@ export class Injector {
     }
     const cbArgs = parsedSignature[1]
       .split(",")
-      .map(argument => this.params[argument.trim()]);
+      .map(argument => {
+        if (overrides[argument]) {
+          return overrides[argument.trim()];
+        }
+        return this.params[argument.trim()];
+      });
     
     return cbArgs;
   }
@@ -29,8 +34,8 @@ export class Injector {
     return cb.apply(thisArg, this.getArguments(cb));
   }
 
-  public construct<T>(ctor: Consturctor<T>): T {
-    const ctorArgs = [null].concat(this.getArguments(ctor));
+  public construct<T>(ctor: Consturctor<T>, overrides?: InjectorParams): T {
+    const ctorArgs = [null].concat(this.getArguments(ctor, overrides));
     return new (Function.prototype.bind.apply(ctor, ctorArgs));
   }
 

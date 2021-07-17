@@ -1,12 +1,16 @@
 {
   "name": "basic-injector",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Automatically call function with the appropriate parameters according to the parameters name in function signature.",
   "main": "index.js",
   "scripts": {
     "test": "node test.js",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
+  "files": [
+    "dist/**"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tamirrevivi/basic-injector.git"
@@ -26,7 +30,7 @@
     "url": "https://github.com/tamirrevivi/basic-injector/issues"
   },
   "homepage": "https://github.com/tamirrevivi/basic-injector#readme",
-  "dependencies": {
+  "devDependencies": {
     "@types/node": "^14.17.3",
     "typescript": "^4.3.5"
   }
