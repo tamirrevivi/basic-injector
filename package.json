@@ -1,6 +1,6 @@
 {
   "name": "basic-injector",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Automatically call function with the appropriate parameters according to the parameters name in function signature.",
   "main": "index.js",
   "scripts": {
